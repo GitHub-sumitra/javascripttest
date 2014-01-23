@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Censored Words</title>
+<script>
+function count_and_censor_words(raw_text, censored_words) {
+	
+	 var rawtextlength=raw_text.split(" ").length;
+	 var wordlenght=censored_words.length;
+	 var censoredWords=0, star="";
+
+	 //loops through the array of string
+	 for (var i=0;i<wordlenght;i++)
+	 { 
+	          var found=raw_text.match(censored_words[i]);
+	          if(found)
+		      {
+			    //create stars of censored words length.
+			    for(var c=0;c<censored_words[i].length;c++)
+			    {star="*"+star;}
+			    
+			    censoredWords++;
+	        	var censoredText=raw_text.replace(found,star);
+	            raw_text=censoredText;
+	           }    
+	 }
+	var censoredObject ={total_words:rawtextlength, censored_text:censoredText, censored_words:censoredWords};
+	return censoredObject;
+}
+</script>
+</head>
+<body>
+
+<script type="text/javascript">
+	var censoredtext=count_and_censor_words("bath has no bathrooms",["bath"]);
+	document.write("total_words : "+censoredtext.total_words+"<br>"+"censored_text :  "+'<span style="color:red">'+'"'+censoredtext.censored_text+'"'+"<br>"+'</span>'+"censored_words :  "+censoredtext.censored_words);
+</script>
+</body>
+</html>

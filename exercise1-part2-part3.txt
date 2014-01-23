@@ -1,0 +1,28 @@
+
+
+Exercise 1,part2
+
+Q: What data format checks should you implement to make code robust
+
+
+A: Robust code is one which handles unexpected actions and abnormal terminations.
+
+   1.Validation and verification are two ways to check that the data entered into a computer is correct.
+     add format checks to ckeck entered data is in the specified format like dates have to be in the format dd mm yyyy
+
+   2.Add Data type checks which Checks the data type of the input and give an error message if the input data does not match with the chosen data type
+  
+   3.add exceptions to handle abnormal actions and errors and give detailed error messages.
+
+   4.Add methods to check overflow of arrays.
+   
+   5.limit the accesibilty of methods and members of code.
+
+
+
+
+Q: what is time complexity of your program
+
+A:
+   Time complexity is commonly estimated by counting the number of elementary operations performed by the algorithm, where an elementary operation takes a fixed amount    of time to perform
+   since my code has more functions and more assignments the time taken is constant.O(1).

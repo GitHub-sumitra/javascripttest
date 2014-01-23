@@ -1,0 +1,41 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Time Interval</title>
+<script type="text/javascript">
+	var  find_sorted_minimal_cover=function(array_of_time_intervals)
+	{
+		
+		array_of_time_intervals.sort(function(a,b){
+			var a = new Date(a.start);
+			var b = new Date(b.start);
+			return  a<b ? -1 : a>b ? 1 : 0;
+			});
+		var start=array_of_time_intervals[0].start;
+		var startdate=start.toLocaleString();
+		document.write("start : "+startdate+"<br>");
+		array_of_time_intervals.sort(function(a,b){
+			var a = new Date(a.end);
+			var b = new Date(b.end);
+			return  a>b ? -1 : a<b ? 1 : 0;
+			});
+		var end=array_of_time_intervals[0].end;
+		var enddate=end.toLocaleString();
+		document.write("end : "+enddate+"<br>");
+	}
+</script>
+</head>
+
+<body>
+<script type="text/javascript">
+
+	var timeintervals=[{start:new Date("December 1,2013"), end:new Date("March 2,2014")},{start:new Date("January 21,2013"), end:new Date("January 22,2014")}];
+	find_sorted_minimal_cover(timeintervals);
+	
+</script>
+</body>
+</html>	
+
+
